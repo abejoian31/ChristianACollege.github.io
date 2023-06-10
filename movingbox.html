@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Moving Box</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial;
+           background-color: lightgrey;
+        }
+
+        header {
+            background-color: blue;
+            padding: 5px;
+            text-align: center;
+            font-size: 12px;
+            color: brown;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: right;
+            padding: 20px;
+            width: 30%;
+            height: 300px;
+           
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: maroon;
+            padding: 10px;
+            text-align: center;
+            color: black;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            animation-name: moving;
+            animation-duration: 5s;
+            animation-delay: 1s;
+            animation-iteration-count: 10;
+        }
+
+        @keyframes moving {
+            0% {
+                background-color: aqua;
+                left: 200px;
+                top: 200px;
+            }
+
+            25% {
+                left: 600px;
+                top: 200px;
+                background-color: purple;
+            }
+
+            50% {
+                left: 600px;
+                top: 600px;
+                background-color: lime;
+            }
+
+            75% {
+                left: 200px;
+                top: 600px;
+                background-color: red;
+            }
+
+            100% {
+                left: 200px;
+                top: 200px;
+                background-color: orange;
+            }
+        }
+
+        p {
+            text-align
+        }
+    </style>
+</head>
+
+<body>
+    <article class="regular"><label for="tbuser">Enter a Queue number:</label>
+        <input type="number" id="tbuser" placeholder="Enter a Queue number" maxlength="10"><input type="button" id="btn1" value="Enter">
+    </article>
+    <nav>
+        <div>
+            <p class="output" id="output1"></p>
+        </div>
+    </nav>
+    <script>
+        const txt1 = document.getElementById('tbuser');
+        const btn1 = document.getElementById('btn1');
+        const out1 = document.getElementById('output1');
+        function fun1() {
+            out1.innerHTML = txt1.value;
+        }
+        btn1.addEventListener('click', fun1);</script>
+</body>
+
+</html>
